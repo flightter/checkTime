@@ -1,0 +1,62 @@
+page-register {
+    .backgound {
+        background-image: url('https://img.freepik.com/free-vector/dark-blue-watercolor-background-design_1034-737.jpg?size=338&ext=jpg');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+  input[type=password], select {
+    color: rgb(255, 255, 255) !important;
+  }
+  input[type=number], select {
+    color: rgb(7, 7, 7) !important;
+  }
+  .a{
+    font-family: "Times New Roman", Times, serif;
+    
+}
+.c{
+    color: #ffffff
+}
+.bu{
+    color: rgb(0, 0, 0)
+  }
+  .item {
+    background-color: rgba(90, 88, 88, 0.356);
+    margin-bottom: 1px;
+    .label {
+      width: 10%;
+      color: rgb(255, 255, 255);
+      font-size: 1.2em;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .input{
+        width: 10%;
+        color: rgb(255, 255, 255);
+        font-size: 1.2em;    
+    }
+  
+  }
+  .button {
+  color: #fff !important;
+  text-transform: none !important;
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+  border: 0 !important;
+  
+  }
+  .foot{
+  margin-top: 10%;
+  width: 150px;
+  }
+  .foot2{
+  margin-top: -10%;
+  }
+  .remember_me {
+    padding: 10px 0;
+  }
+      
+}

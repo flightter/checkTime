@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar  color="h">
+    <ion-title>
+
+      <div text-center class="a">
+        LOGIN
+      </div>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="backgound-image">
+    <ion-list>
+        <div text-center> 
+     
+          <img height="300px" src="assets/imgs/CheckB.png">
+         
+        
+        </div>
+
+        </ion-list>
+
+  <ion-item>
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="{{type}}"[(ngModel)]="password" ></ion-input>
+    <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+    <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+  
+  </ion-item>
+
+<div text-center>
+  <button  (click)="login()" ion-button full round class="a" color="h">SUBMIT</button>
+  <button (click)="register()" ion-button full round class="a" color="h">REGISTER</button></div>
+
+
+
+
+    <!-- Real floating action button, fixed. It will not scroll with the content -->
+   
+   
+</ion-content>
+
+
+  

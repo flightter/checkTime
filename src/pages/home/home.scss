@@ -1,0 +1,91 @@
+page-home {
+    .image {
+        background-image: url('https://img.freepik.com/free-vector/dark-blue-watercolor-background-design_1034-737.jpg?size=338&ext=jpg');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    .clock {
+        font-size: 4em;
+        text-shadow: 0 0 20px rgb(0, 0, 0),  0 0 10px rgb(0, 0, 0);
+        color: #fdfdfd;
+        #date {
+            color: white;
+            font-size: 5px;
+          }
+      }
+
+      .clock2 {
+        font-size: 2em;
+        text-shadow: 0 0 20px rgb(0, 0, 0),  0 0 10px rgb(0, 0, 0);
+        color: #fdfdfd;
+        #date {
+            color: white;
+            font-size: 5px;
+          }
+      }
+    
+      .segment-button.a {
+        color: rgb(21, 153, 4) !important;
+        font-family: "Times New Roman", Times, serif;
+        // text-transform: none !important;
+        // font-size: 0.5rem !important;
+        // font-weight: 100 !important;
+        // opacity: 1 !important;
+        // border: 0 !important;
+    }
+    .segment-button.b {
+        color: rgb(207, 4, 4) !important;
+        font-family: "Times New Roman", Times, serif;
+    }
+    input[type=number], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgba(255, 254, 254, 0.808);
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color:rgba(255, 254, 254, 0.808);
+        font-family: "Times New Roman", Times, serif;
+       
+    }
+    .a{
+        font-family: "Times New Roman", Times, serif;
+       
+    }
+    .b{
+        color:rgb(226, 226, 226)
+    }
+    .segment.c {
+        color: rgb(21, 153, 4) !important; 
+        // text-transform: none !important;
+        // font-size: 0.5rem !important;
+        // font-weight: 100 !important;
+        // opacity: 1 !important;
+        // border: 0 !important;
+    }
+    .segment.d {
+        color: rgb(207, 4, 4) !important;
+}
+.ion-segment.a{
+    width: 100%;
+}
+.item {
+    background-color: rgba(90, 88, 88, 0.356);
+    margin-bottom: 1px;
+    .label {
+    width: 10%;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    font-family: "Times New Roman", Times, serif;
+    }
+    .input{
+      width: 10%;
+      color: rgb(255, 255, 255);
+      font-size: 1.2em;    
+    }
+    
+    }
+}

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="h">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <div text-center class="a">
+    <ion-title ><h2>Home</h2></ion-title>
+   </div>
+
+   </ion-navbar>
+</ion-header>  
+
+
+
+
+<ion-content padding class="image">
+
+  <div class="clock2" text-center></div>
+  <div class="clock" text-center></div>
+ 
+
+  <ion-toolbar no-border-top color="pop">
+    <ion-segment [(ngModel)]="INOUT" color="primary">
+      <ion-segment-button  value="in" class="a">
+        <h2>IN</h2>
+      </ion-segment-button>
+      <ion-segment-button value="out" class="b">
+        <h2 >OUT</h2>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+  <div [ngSwitch]="INOUT">
+    <ion-list *ngSwitchCase="'in'">
+        
+            <!-- <label for="ID" class="a"><h3 class="b">IN</h3></label><br>
+            <ion-input type="number" [(ngModel)]="id" placeholder="Your ID"></ion-input> -->
+        
+        <br>
+        <ion-item>
+          <ion-label fixed>ID</ion-label>
+          <ion-input type="text" [(ngModel)]="ID"></ion-input>
+        </ion-item>
+        <br>
+        <div text-center>
+   
+              <img height="250px" src="assets/imgs/in.png" (click)="CheckIn()">
+
+      </div>
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="INOUT">
+      <ion-list *ngSwitchCase="'out'">
+          <!-- <label for="ID" class="a"><h3 class="b">OUT</h3></label><br>
+            <ion-input type="number" [(ngModel)]="id" placeholder="Your ID"></ion-input> -->
+          <br>
+          <ion-item>
+            <ion-label fixed>ID</ion-label>
+            <ion-input type="text" [(ngModel)]="ID2"></ion-input>
+          </ion-item>
+          <br>
+          <div text-center>
+              <img height="250px" src="assets/imgs/out.png" (click)="CheckOut()">
+        </div>
+      </ion-list>
+    </div>
+    <div text-right>
+        <button ion-button>
+           <ion-icon name="add"></ion-icon>
+         </button>
+        </div>
+
+</ion-content>
+
+
