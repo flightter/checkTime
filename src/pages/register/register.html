@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="h">
+  <ion-navbar color="front">
     <ion-title class="a" text-left>Register</ion-title>
   </ion-navbar>
 
@@ -13,8 +13,7 @@
   <ion-list>
       <div text-center>
           <!-- <ion-item no-lines style="text-align: center"> -->
-            <img height="250px" src="assets/imgs/Register1.png">
-          <!-- </ion-item> -->
+            <img height="250px" src="assets/imgs/CheckD7.png">          <!-- </ion-item> -->
           </div>
           <ion-item>
             <ion-label fixed>Name</ion-label>
@@ -35,19 +34,12 @@
             <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
             <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
           </ion-item>
-          <ion-item>
-            <ion-label fixed>Repeat</ion-label>
-            <!-- <ion-input type="password" [(ngModel)]="password"></ion-input> -->
-            <ion-input  type="{{types}}" [(ngModel)]="repass" ></ion-input>
-            <button *ngIf="!showPasss" ion-button clear color="dark" type="button" item-right (click)="showPasswords()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
-            <button *ngIf="showPasss" ion-button clear color="dark" type="button" item-right (click)="showPasswords()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
-          </ion-item>
 
 
         
   </ion-list>
 <div >
-    <button  (click)="submit()" ion-button full round class="a" color="h">SUBMIT</button>
+    <button  (click)="save()" ion-button full round class="a" color="front">SUBMIT</button>
 </div>
 </ion-content>
 <footer>

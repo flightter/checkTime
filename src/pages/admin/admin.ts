@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
+import { Storage } from '@ionic/storage';
+import { Admin } from '../../service/admin';
+
 
 /**
  * Generated class for the AdminPage page.
@@ -18,33 +21,19 @@ declare var google;
 })
 export class AdminPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public items:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,private adminz:Admin) {
+ 
+     console.log( this.navParams.get('id'));
+     
+      this.adminz.Data(this.navParams.get('id')).subscribe(data =>{
+        this.items = data
+    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
   }
-list(){
-  var data = google.visualization.arrayToDataTable([
-    ['time', 'in', 'out'],
-    ['06:00',  1000,      400],
-    ['07:00',  1170,      460],
-    ['08:00',  660,       1120],
-    ['09:00',  1030,      540]
-  ]);
-
-  var options = {
-    title: 'Company Performance',
-    curveType: 'function',
-    legend: { position: 'bottom' }
-  };
-
-  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-  chart.draw(data, options);
-}
-back(){
-  this.navCtrl.setRoot(HomePage)
-}
 
 }

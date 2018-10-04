@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar text-center  class="a" color="h">
+  <ion-navbar text-center  class="a" color="front">
     <ion-title>admin</ion-title>
   </ion-navbar>
 
@@ -22,11 +22,11 @@
         <ion-col width-50>สถานะ</ion-col>
       </ion-row>
   
-      <ion-row>
-        <ion-col width-33>พีรดา</ion-col>
-        <ion-col width-25>ธรรมนิภา</ion-col>
-        <ion-col width-50>07:26</ion-col>
-        <ion-col width-50>18:00</ion-col>
+      <ion-row  *ngFor="let item of items">
+        <ion-col width-33>{{item.user_name}}</ion-col>
+        <ion-col width-25>{{item.user_lastname}}</ion-col>
+        <ion-col width-50>{{item.check_time}}</ion-col>
+        <ion-col width-50>{{item.status}}</ion-col>
       </ion-row>
       </ion-list>
 </ion-content>

@@ -22,12 +22,7 @@ export class Login{
       
              
           }
-
-        //   dataForUser(id:any){
-        
-        //     return this.http.get(`${this.baseUrl}User/${id}`).map(this.extractResponse)  
-        //       }      
-      
+          
           private extractResponse(res : Response){
               return res.json();
           }

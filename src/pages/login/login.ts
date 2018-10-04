@@ -4,6 +4,8 @@ import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
 import { Login } from '../../service/login';
+import { Storage } from '@ionic/storage';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -24,7 +26,7 @@ export class LoginPage {
   password:any
   users:any
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataUser: Login) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataUser: Login, private storage:Storage) {
     
   }
   ionViewDidLoad() {
@@ -34,18 +36,27 @@ export class LoginPage {
   register(){
     this.navCtrl.push(RegisterPage)
   }
+
+
+
   login(){
-    
+    console.log(this.username);
+    console.log(this.password);
+
   if(this.username == null || this.username == undefined || this.password == null || this.password == undefined) { 
     alert("กรอกให้ถูกต้อง");
 } else {
   this.dataUser.loginService(this.username,this.password).subscribe(data =>{
-    console.log(data);
-    
+    this.storage.set('data',data);
+    this.navCtrl.setRoot(HomePage);
   })
     }
+
   }
      
+
+
+
 
   showPassword() {
     this.showPass = !this.showPass;

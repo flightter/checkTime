@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="front">
+    <ion-title class="a" text-left>Add</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="backgound">
+
+    
+  <ion-list>
+      <div text-center>
+          <!-- <ion-item no-lines style="text-align: center"> -->
+            <img height="300px" src="assets/imgs/CheckD7.png">          <!-- </ion-item> -->
+          </div>
+          <ion-item>
+            <ion-label fixed>ID</ion-label>
+            <ion-input type="text" [(ngModel)]="user_pass"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="user_name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Lastname</ion-label>
+            <ion-input type="text" [(ngModel)]="user_lastname"></ion-input>
+          </ion-item>
+
+        
+  </ion-list>
+<div >
+    <button  (click)="save()" ion-button full round class="a" color="front">SUBMIT</button>
+</div>
+</ion-content>
+<footer>
+    <ion-icon ios="ios-home" md="md-home"></ion-icon>
+  </footer>

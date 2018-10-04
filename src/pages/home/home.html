@@ -1,16 +1,24 @@
 <ion-header>
-  <ion-navbar color="h">
+  <ion-navbar color="front">
 
+  <div class="row responsive-sm">
+    <div class="col">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-
-    <div text-center class="a">
+  </div>
+  <div  class="a">
     <ion-title ><h2>Home</h2></ion-title>
-   </div>
+  </div>
+  <div class="col" text-right>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVmSURBVGhD7ZlbiFVVHMZn8tJUE0Z2ESes0aIyhHSMkCgSRaKHIE1NYhKkoocuUAiSikQowVBk0c0So0jmJQmCCgl1pAcl6WJETpTQDUzLRsLM1Jl+31rf2Z3jPnPc+8jsMw/zg4+19v+2/nvO3ufstadphBGGGQMDA639/f33oI2oB32LbQ/jB2glusGhwxMaPA89hf6k8ZoQsw3NdOrwgaamoG/cZyaIP8WwAjW7TGOhoWnoj9Cd4fgQ2oCWojvQ3ZhXMH4aI/4H2ysu1Tho4lL0vXtSUyfRWqatDkmB/1ZU8elx/LjdjYEGNroXNXMc3WVXTYi7EG13qnL/YZhsd7Gw+FR0MrYSmnnMrkyQchE5+2N2yH/XrmJh4S73oCY+ZzjHrsyQtyBWiJ8owzi7ioOFv4sthCYesDkXpDaT+2usEuossasYWLMlLh2hgSvsyg255ffZOpuLgTUnx6XD4icYcl9WJchfEysF3rK5GFj8ei+sEzluc12Qv8qlVKvb5mJgzUvi0gkT7MoNzb/mGjqRF20uDhYtv0nvszk35Jb/oD5oc3GwaPlN2mNzLkidGyuEGqLuL426YdFZ7iHA8SK7MkHK+eR8FbND/sd2FQ+Lf+Q+1MhRdLNdNSF8DLHdMTPknsqaOySweDt99MV2QkPHGB5Cox2Sgpir8e9QfAlsz9vdOGhijk8ggeN9aDWazeF1qIP5EtSN9CiSwLE+1aonjk8Pl234x9g0tLDYbHQwdJYDct5hGOsyqtOGVqHt6O8YFeLEAbQF3Y9paJ7JKDyXBb4Iq2aE+BNoHboYaV+zCf1rd02IO4yeZNriFs4OCk2g4Iehep2QfwRV7DCzQp6+9a5yO/VBgdspVHE5caxvn11Mta29BV2JzuVYb1amMC5kfBMdVnw18On+0tuWmehyTGMZdcnpXlyPDsXICMe/MXS4rXyQfCdKrmHBsW7aGx1SE2IvQMnXr+nDtoxx0G88gV8bsi7UH7KA6c+ozSHZIOEmlHzzMNfvR94fQ12Sv8cKocZ+NNXuTBC/AGmLHGC+kyHbGxmCx6OfYmpIPohm2J0Zcja5hNAnkXpph+1a9IP1pc0VYO90jRIL7aoNiW84QSehlw2z7MoMqZPI0x4mwHyZXRVgn+YQ0WdzCuI2O0a19tk8OATNQHqpFmD+sF25IG+lS6iGXqeOsqsCfFlPpB2V/2FqXyEEvO1YBX/NUNeukLzk8YQ6q21OgS/TiQhitzlONZ+2OQ3+cQSU/9Jmen9VDXKPuozqJO9/mavxjpI4XqwYwfwvhsQnYWt3qnKXYwswf8/mNDjnO06Bekld17MPea2hiKHWZXZpjR9tzgTxyXsw5otsln23zWlwPue4igJ5IXeiy5Qof846mxOZZ7PsvTanwbnVcQp8wubckK59SPkPWbIjZL4X6RmqpCMOU5wo90kbnKrc5GuY+eC7Vfx7YlgIvNfmuiD/gEup1hybU+DLc7M/4zjVHPxNDE7dTM9KzK+xuS7I3xJWBObrbU6BL8+J7HWcaj5q89DCQku9phbVY0rVvUXWEyHuNseoni7bSXYNLSykr/LksZ15l10VYD/jiWAfRdxnMSTU2mpXMbCgNkUB5mK+XQnY9Oj+uvWCzRVgf8llSp9GfY/z9cKCLaxbfl0fQ512nxFSRhOfnITg+GW7i4WFtek6fWO2GSW/2NUgTBu63TEjwnEPQ/KbVDg0MB39EtuJcKy9vP59vRwtRvNQJ1qLkk+xBLadaLxLNg6amKhm3FdmyBGvMm3cJ3E6NNOMtJ/vVZO1iP33f4KmO314QoPa96xB76NdqBfp8tH98wjnUszvxAgj1KKp6T9pAXhid0EigQAAAABJRU5ErkJggg=="  (click)="Add()">
+
+      </div>
+</div>
 
    </ion-navbar>
-</ion-header>  
+</ion-header>
 
 
 
@@ -19,36 +27,35 @@
 
   <div class="clock2" text-center></div>
   <div class="clock" text-center></div>
- 
+ <br>
+ <br>
 
   <ion-toolbar no-border-top color="pop">
-    <ion-segment [(ngModel)]="INOUT" color="primary">
-      <ion-segment-button  value="in" class="a">
-        <h2>IN</h2>
-      </ion-segment-button>
-      <ion-segment-button value="out" class="b">
-        <h2 >OUT</h2>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+        <ion-segment [(ngModel)]="INOUT" color="primary">
+          <ion-segment-button  value="in" class="a">
+            <h2>IN</h2>
+          </ion-segment-button>
+          <ion-segment-button value="out" class="b">
+            <h2 >OUT</h2>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
 
 
 
   <div [ngSwitch]="INOUT">
     <ion-list *ngSwitchCase="'in'">
         
-            <!-- <label for="ID" class="a"><h3 class="b">IN</h3></label><br>
-            <ion-input type="number" [(ngModel)]="id" placeholder="Your ID"></ion-input> -->
-        
+            
         <br>
         <ion-item>
           <ion-label fixed>ID</ion-label>
-          <ion-input type="text" [(ngModel)]="ID"></ion-input>
+          <ion-input type="text" [(ngModel)]="user_pass"></ion-input>
         </ion-item>
         <br>
         <div text-center>
    
-              <img height="250px" src="assets/imgs/in.png" (click)="CheckIn()">
+              <img height="300px" src="assets/imgs/in.png" (click)="CheckIn('IN')">
 
       </div>
     </ion-list>
@@ -56,24 +63,18 @@
 
   <div [ngSwitch]="INOUT">
       <ion-list *ngSwitchCase="'out'">
-          <!-- <label for="ID" class="a"><h3 class="b">OUT</h3></label><br>
-            <ion-input type="number" [(ngModel)]="id" placeholder="Your ID"></ion-input> -->
+ 
           <br>
           <ion-item>
             <ion-label fixed>ID</ion-label>
-            <ion-input type="text" [(ngModel)]="ID2"></ion-input>
+            <ion-input type="text" [(ngModel)]="user_pass"></ion-input>
           </ion-item>
           <br>
           <div text-center>
-              <img height="250px" src="assets/imgs/out.png" (click)="CheckOut()">
+              <img height="300px" src="assets/imgs/out.png" (click)="CheckOut('OUT')" >
         </div>
       </ion-list>
     </div>
-    <div text-right>
-        <button ion-button>
-           <ion-icon name="add"></ion-icon>
-         </button>
-        </div>
 
 </ion-content>
 

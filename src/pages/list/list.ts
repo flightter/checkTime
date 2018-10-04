@@ -4,6 +4,8 @@ import { LoginPage } from '../login/login';
 import { Observable } from '../../../node_modules/rxjs/Observable';
 import { AdminPage } from '../admin/admin';
 import { User } from '../../service/user';
+import { Storage } from '@ionic/storage';
+
 
 
 @Component({
@@ -14,18 +16,24 @@ export class ListPage {
 
   public items:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private datause:User) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private datause:User, private storage:Storage) {
+    this.storage.get('data').then(val =>{
+      
+      this.datause.Data(val[0].id).subscribe(data =>{
+        this.items = data
+    })
     
-    this.datause.Data().subscribe(data =>{
-      this.items = data
-      console.log(data);
       
     })
   }
 
 
-  goAdmin(){
-    this.navCtrl.push(AdminPage);
+  goAdmin(data){
+    let id =  {
+      id:data.user_id
+    }
+    
+    this.navCtrl.push(AdminPage,id);
   }
 
 

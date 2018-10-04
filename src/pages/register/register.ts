@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Register } from '../../service/register';
+import { LoginPage } from '../login/login';
 
 
 @Component({
@@ -10,58 +12,41 @@ export class RegisterPage {
   username:any;
   password:any;
   repassword:any;
+  name:any;
+  lastname:any;
+
   public type = 'password';
   public showPass = false;
   public types = 'password';
   public showPasss = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private re: Register) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
-  submit(){
-    //  let loader =  this.loadingCtrl.create({
-    //     content: 'Please wait...',
-    //     duration: 3000,
-    //     dismissOnPageChange: true
-    //   })
-    //   loader.present()
-    
-    
-    //   let user ={
-      
-    //     pass:this.password,
-    //     repeat:this.repassword
-        
-    //   }
-    //   this.storage.set('name', [user])
-      
-    //  console.log(this.username+this.password+this.repassword);
-      
-    
-    //  if (this.username == null || this.password == null || this.repassword == null ||this.username == undefined 
-    //    || this.password == undefined || this.repassword == undefined ) {      
-    
-    //   alert("กรุณากรอกข้อมูล");
-        
-    //   }else{
-    //     if (this.password!=this.repassword){
-    //       alert("กรุณากรอกรหัสให้ตรงกัน");
-      
-    //     }else{
-    //       loader.dismiss()
-    //     }
-    //   }
-     
-     
-    }
-    
-    
-      save(){
 
+  
+
+  save(){
+    if(this.username == null || this.username == undefined || this.password == null || this.password == undefined || 
+      this.name == null || this.name == undefined || this.lastname == null || this.lastname == undefined) { 
+      alert("กรอกให้ถูกต้อง");
+  } else {
+    this.re.RegisterService(this.username,this.password,this.name,this.lastname).subscribe(data =>{
+      console.log(data);
+      this.navCtrl.setRoot(LoginPage);
+
+    })
+    
     }
+  }
+
+
+
+
+
     showPassword() {
       this.showPass = !this.showPass;
     

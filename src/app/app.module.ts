@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AdduserPage } from '../pages/adduser/adduser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -12,6 +13,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { AdminPage } from '../pages/admin/admin';
 import { HttpModule } from '../../node_modules/@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 // service
 
@@ -19,6 +21,10 @@ import { Config } from '../service/config';
 import { User } from '../service/user';
 import { Admin } from '../service/admin';
 import { Login } from '../service/login';
+import { Register } from '../service/register';
+import { Add } from '../service/add';
+import { Check } from '../service/check';
+
 
 @NgModule({
   declarations: [
@@ -28,12 +34,14 @@ import { Login } from '../service/login';
     RegisterPage,
     LoginPage,
     AdminPage,
+    AdduserPage
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,6 +51,7 @@ import { Login } from '../service/login';
     RegisterPage,
     LoginPage,
     AdminPage,
+    AdduserPage
     
   ],
   providers: [
@@ -53,7 +62,10 @@ import { Login } from '../service/login';
     Config,
     User,
     Admin,
-    Login
+    Login,
+    Register,
+    Add,
+    Check
     
     
 
