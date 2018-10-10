@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { Observable } from '../../../node_modules/rxjs/Observable';
+// import { LoginPage } from '../login/login';
+// import { Observable } from '../../../node_modules/rxjs/Observable';
 import { AdminPage } from '../admin/admin';
 import { User } from '../../service/user';
 import { Storage } from '@ionic/storage';
@@ -18,8 +18,10 @@ export class ListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private datause:User, private storage:Storage) {
     this.storage.get('data').then(val =>{
+      console.log(val.status.id);
       
-      this.datause.Data(val[0].id).subscribe(data =>{
+      this.datause.Data(val.status.id).subscribe(data =>{
+        
         this.items = data
     })
     

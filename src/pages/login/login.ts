@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
@@ -26,7 +26,7 @@ export class LoginPage {
   password:any
   users:any
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataUser: Login, private storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataUser: Login, private storage:Storage,private alertCtrl: AlertController) {
     
   }
   ionViewDidLoad() {
@@ -47,8 +47,15 @@ export class LoginPage {
     alert("กรอกให้ถูกต้อง");
 } else {
   this.dataUser.loginService(this.username,this.password).subscribe(data =>{
+    if(data.status){
     this.storage.set('data',data);
     this.navCtrl.setRoot(HomePage);
+    }else{
+      let alert = this
+.alertCtrl
+.create({title: 'แจ้งเตือน', subTitle: 'ไม่มีรหัสนี้อยู่ในระบบ', buttons: ['ตกลง']});
+alert.present();
+}      
   })
     }
 

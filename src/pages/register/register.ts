@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Register } from '../../service/register';
 import { LoginPage } from '../login/login';
 
@@ -20,7 +20,7 @@ export class RegisterPage {
   public types = 'password';
   public showPasss = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,private re: Register) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private re: Register,private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -32,12 +32,21 @@ export class RegisterPage {
   save(){
     if(this.username == null || this.username == undefined || this.password == null || this.password == undefined || 
       this.name == null || this.name == undefined || this.lastname == null || this.lastname == undefined) { 
-      alert("กรอกให้ถูกต้อง");
+        let alert = this
+        .alertCtrl
+        .create({title: 'แจ้งเตือน', subTitle: 'กรุณากรอกข้อมูลให้ครบ', buttons: ['ตกลง']});
+      alert.present();
   } else {
     this.re.RegisterService(this.username,this.password,this.name,this.lastname).subscribe(data =>{
-      console.log(data);
+      if(data.status){
       this.navCtrl.setRoot(LoginPage);
-
+      }else{
+              let alert = this
+      .alertCtrl
+      .create({title: 'แจ้งเตือน', subTitle: data.msg, buttons: ['ตกลง']});
+      alert.present();
+      }      
+      console.log(data);
     })
     
     }
